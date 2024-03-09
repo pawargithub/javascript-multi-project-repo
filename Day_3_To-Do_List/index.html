@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>To-Do Lists</title>
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
+  <body onload="defaultItems()">
+    <div class="to-do-container">
+      <h1>Task Lists <span></span></h1>
+      <div class="add-field">
+        <input
+          type="text"
+          id="add-text"
+          placeholder="What plan do you have today?"
+        />
+        <button id="add-text-btn">Add</button>
+      </div>
+      <div class="task-bar-completion">
+        <h2>Tasks</h2>
+        <p>
+          <span>Tasks Added: 3</span>
+        </p>
+      </div>
+      <div class="item-list-section">
+        <ul class="item-list-container"> 
+        </ul>
+      </div>
+    </div>
+    <script src="./js/app.js" type="text/javascript"></script>
+  </body>
+</html>

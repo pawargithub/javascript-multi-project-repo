@@ -1,0 +1,239 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+* {
+  padding: 0px;
+  margin: 0px;
+  box-sizing: border-box;
+}
+
+:root {
+  --bg-color: #384152;
+  --add-text-color: #566371;
+  --add-text-bg-color: #202837;
+  --list-text-bg-color: #111727;
+  --list-text-color: #ced9ea;
+  --linear-color-left: #d51e5e;
+  --linear-color-right: #8e38fb;
+  --white-color: #ffffff;
+  --linear-incomplete-btn-left-color: #87A922;
+  --linear-incomplete-btn-right-color: #26745a;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  background-color: var(--bg-color);
+  color: var(--add-text-color);
+}
+
+h1, h2{
+    font-weight: 300;
+    /* border: 2px solid white; */
+    padding: 15px 0;
+}
+
+.to-do-container{
+    /* border: 2px solid white; */
+    width: 70%;
+    margin: 0 auto;
+    padding: 5px 15px;
+}
+
+.add-field{
+    width: 100%;
+    /* border: 2px solid white; */
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 0;
+}
+
+.add-field > input {
+    width: 90%;
+    background-color: var(--add-text-bg-color);
+    padding: 23px 15px;
+    border: none;
+    border-radius: 15px;
+    font-size: 1.2rem;
+    outline: none;
+}
+
+.add-field > input:focus{
+    color: var(--list-text-color);
+}
+
+.add-field > button {
+    width: 8%;
+    border-radius: 10px;
+    padding: 15px 15px;
+    border: none;
+    font-size: 18px;
+    background: linear-gradient(90deg, var(--linear-color-left), var(--linear-color-right));
+    color: var(--list-text-color);
+    cursor: pointer;
+}
+
+.task-bar-completion{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.item-list-section{
+    border: none;
+}
+
+.item-list-section > ul > li{
+    list-style: none;
+    margin: 10px 0px;
+    display: flex;
+    justify-content: space-between;
+}
+
+
+.item-list-section > ul > li > textarea:nth-child(1){
+    width: 82%;
+    padding: 10px 15px;
+    font-size: 16px;
+    border-radius: 10px;
+    border:none;
+    background-color: var(--list-text-bg-color);
+    color: var(--white-color);
+    resize: none;
+    line-height: 1.5rem;
+    overflow-y: scroll;
+    scrollbar-color: grey;
+    scrollbar-width: bold;
+}
+
+.item-list-section > ul > li > textarea:nth-child(1)::-webkit-scrollbar{
+    width: 10px;
+}
+
+.item-list-section > ul > li > input:nth-child(2), .item-list-section > ul > li > input:nth-child(3), .item-list-section > ul > li > input:nth-child(4){
+    padding: 10px 15px;
+    font-size: 16px;
+    border-radius: 10px;
+    border:none;
+    background: linear-gradient(90deg, var(--linear-color-left), var(--linear-color-right));
+    color: var(--list-text-color);
+    height: fit-content;
+    cursor: pointer;
+}
+
+
+
+.hide-me{
+    display: none;
+}
+
+.show-me{
+    display: inline;
+}
+
+@media all and (min-width: 769px) and (max-width: 1240px){
+    .to-do-container{
+        width: 80%;
+    }
+
+    .add-field > input {
+        width: 90%;
+        background-color: var(--add-text-bg-color);
+        padding: 10px 16px;
+        border: none;
+        border-radius: 15px;
+        font-size: 1rem;
+        outline: none;
+    }
+
+    .add-field > button {
+        padding: 10px;
+    }
+
+    .item-list-section > ul > li > textarea:nth-child(1){
+        width: 78%;
+        padding: 7px 12px;
+        font-size: 14px;
+    }
+
+    .item-list-section > ul > li > input:nth-child(2), .item-list-section > ul > li > input:nth-child(3), .item-list-section > ul > li > input:nth-child(4){
+        padding: 7px 12px;
+        font-size: 14px;
+    }
+}
+
+@media all and (min-width: 425px) and (max-width: 768px){
+    .to-do-container{
+        width: 85%;
+    }
+
+    .add-field > input {
+        width: 85%;
+        background-color: var(--add-text-bg-color);
+        padding: 10px 16px;
+        border: none;
+        border-radius: 15px;
+        font-size: 1rem;
+        outline: none;
+    }
+
+    .add-field > button {
+        width: 10%;
+        padding: 4px 6px;
+        font-size: 12px;
+    }
+
+    .item-list-section > ul > li > textarea:nth-child(1){
+        width: 70%;
+        padding: 5px 10px;
+        font-size: 13px;
+    }
+
+    .item-list-section > ul > li > input:nth-child(2), .item-list-section > ul > li > input:nth-child(3), .item-list-section > ul > li > input:nth-child(4){
+        padding: 5px 9px;
+        font-size: 12px;
+    }
+
+    .task-bar-completion{
+        margin-bottom: 0;
+    }
+}
+
+@media all and (min-width: 300px) and (max-width: 424px){
+    .to-do-container{
+        width: 95%;
+    }
+
+    .add-field > input {
+        width: 80%;
+        background-color: var(--add-text-bg-color);
+        padding: 8px 12px;
+        border: none;
+        border-radius: 10px;
+        font-size: .8rem;
+        outline: none;
+    }
+
+    .add-field > button {
+        width: 15%;
+        padding: 4px 6px;
+        font-size: 12px;
+    }
+
+    .item-list-section > ul > li > textarea:nth-child(1){
+        width: 70%;
+        padding: 5px 10px;
+        font-size: 10px;
+    }
+
+    .item-list-section > ul > li > input:nth-child(2), .item-list-section > ul > li > input:nth-child(3), .item-list-section > ul > li > input:nth-child(4){
+        padding: 5px 7px;
+        font-size: 10px;
+        width: fit-content;
+    }
+
+    .task-bar-completion{
+        margin-bottom: 0;
+    }
+}
