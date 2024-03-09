@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Digital Clock</title>
+  <link rel="stylesheet" href="./css/style.css" />
+</head>
+<body class="clock-body-section">
+  <div class="container adjust-box-as-column">
+
+    <div class="day-container">
+      <ul class="adjust-box-as-row">
+        <li id="sunday" class="day-of-week">Sun</li>
+        <li id="monday" class="day-of-week">Mon</li>
+        <li id="tuesday" class="day-of-week">Tue</li>
+        <li id="wednesday" class="day-of-week">Wed</li>
+        <li id="thursday" class="day-of-week">Thu</li>
+        <li id="friday" class="day-of-week">Fri</li>
+        <li id="saturday" class="day-of-week">Sat</li>
+      </ul>
+    </div>
+
+    <div class="time-container adjust-box-as-row">
+      <div class="hours-box time-box adjust-box-as-column">
+        <span class="time-in-hours">00</span>
+        <span class="time-description">Hours</span>
+      </div>
+      <span class="semi-colon">:</span>
+      <div class="minutes-box time-box adjust-box-as-column">
+        <span class="time-in-minutes">00</span>
+        <span class="time-description">Minutes</span>
+      </div>
+      <span class="semi-colon">:</span>
+      <div class="seconds-box time-box adjust-box-as-column">
+        <span class="time-in-seconds">00</span>
+        <span class="time-description">Seconds</span>
+      </div>
+    </div>
+
+    <div class="month-and-year-container adjust-box-as-row">
+      <span class="date">25</span>
+      <span class="month">January</span>
+      <span class="year">2000</span>
+    </div>
+
+  </div>
+  
+  <script src="./js/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,165 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap');
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root{
+  --background-linear-left-color: #240A34; 
+  --background-linear-right-color: #891652;
+  --text-color: #EEEEEE;
+  --text-light-color: #757e8e;
+}
+
+body{
+  font-family: "Orbitron", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  background: linear-gradient(90deg, var(--background-linear-left-color), var(--background-linear-right-color));
+  color: var(--text-color);
+}
+
+/* General styling */
+.adjust-box-as-column{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.clock-body-section{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.adjust-box-as-row{
+  display: flex;
+  flex-direction: row;
+  gap: 5px;
+  justify-content: center;
+  align-items: center;
+}
+
+.container{
+  width: 70%;
+  padding: 15px 20px;
+  margin-top: 7rem;
+  background-color: rgba(255, 255, 255, 0.11);
+  backdrop-filter: blue(7px);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.9);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* .container > *{
+  border: 2px solid black;
+} */
+
+
+/* Day and week sections*/
+.day-container ul{
+  list-style: none;
+  gap: 30px;
+}
+
+.day-container ul li{
+  font-size: 1.2rem;
+  padding: 15px 10px;
+  color: var(--text-light-color); 
+}
+
+/* Time section */
+.time-container{
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+
+.time-box{
+  /* border: 2px solid black; */
+  text-align: center;
+  padding: 15px 10px;
+}
+
+.time-box span:nth-child(1){
+  font-size: 3.5rem;
+  font-weight: bold;
+}
+
+.semi-colon{
+  margin-bottom: 30px;
+  font-weight: bold;
+  /* border: 2px solid black; */
+}
+
+/* month and year section */
+
+.month-and-year-container{
+  align-items: center;
+  padding: 15px 0;
+  gap: 15px;
+}
+
+.month-and-year-container > span{
+  text-align: center;
+  /* border: 2px solid black; */
+  width: fit-content;
+  font-size: 1.5rem;
+}
+
+/* Laptops Section */
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .day-container ul{
+    gap: 15px;
+  }
+
+  .day-container ul li{
+    font-size: 1.1rem;
+  }
+}
+
+@media (min-width: 426px) and (max-width: 768px) {
+  .container{
+    width: 85%;
+  }
+
+  .day-container ul{
+    gap: 5px;
+  }
+
+  .day-container ul li{
+    font-size: 0.8rem;
+  }
+
+  .time-box span:nth-child(1){
+    font-size: 3rem;
+  }
+}
+
+@media (min-width: 300px) and (max-width: 425px){
+  .container{
+    width: 90%;
+  }
+
+  .day-container ul{
+    gap: 2px;
+  }
+
+  .day-container ul li{
+    font-size: 0.5rem;
+  }
+
+  .time-box span:nth-child(1){
+    font-size: 2rem;
+  }
+
+  .time-description{
+    font-size: 0.9rem;
+  }
+
+  .month-and-year-container > span{
+    font-size: 1.2rem;
+  }
+}
