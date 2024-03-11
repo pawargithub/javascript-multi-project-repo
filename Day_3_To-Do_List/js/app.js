@@ -25,6 +25,7 @@ let listArray = [
 </li>`
 ];
 
+// For updating the Array if some element is deleted.
 function newArray(newListArray){
     // console.log(newListArray);
     let length = newListArray.length;
@@ -52,6 +53,33 @@ function newArray(newListArray){
     listArray = tempArray;
 
     defaultItems();
+}
+
+// For updating the textarea.
+
+function updateTextarea(item, textareaValue){
+    // console.log(item.id);
+    // console.log(textareaValue);
+    // console.log(listArray);
+    let selectedId = item.id;
+    let lengthOfListArray = listArray.length;
+    let tempArray = [];
+
+    for(let i = 0; i < lengthOfListArray; i++){
+        let elementString = listArray[i];
+        let tempElement = document.createElement("div");
+        tempElement.innerHTML = elementString;
+
+        let elementId = tempElement.querySelector("[id]").id;
+        if(elementId === selectedId){
+            // tempElement.querySelector("[id] > textarea").value = textareaValue;
+            tempElement.querySelector("[id] > textarea").innerHTML = textareaValue;
+        }
+
+        let tempArrayString = tempElement.innerHTML;
+        tempArray.push(tempArrayString);
+    }
+    listArray = tempArray;
 }
 
 let defaultItems = () => {
@@ -90,6 +118,10 @@ let defaultItems = () => {
                 // console.log(textarea);
             } else if (e.target.getAttribute("class") == "save"){
                 let item = e.target.parentNode;
+                let textareaValue = item.querySelector("textarea").value;
+                // console.log(item);
+                // console.log(item.querySelector("textarea").value);
+                updateTextarea(item, textareaValue);
                 let textarea = item.querySelector("textarea").setAttribute("disabled", true);
                 item.querySelectorAll("input")[1].classList.remove("hide-me");;
                 item.querySelectorAll("input")[0].classList.add("hide-me");
@@ -132,7 +164,7 @@ addBtn.addEventListener("click", () => {
     let editORDelete = document.querySelectorAll('input[type="button"]');
     Array.from(editORDelete).forEach((singleEditOrDelete) => {
         singleEditOrDelete.addEventListener("click", (e) => {
-            console.log(e.target);
+            // console.log(e.target);
             if(e.target.getAttribute("class") === "delete"){
                 let itemIndex = e.target.parentNode.id;
                 listArray.splice(itemIndex, 1);
@@ -148,9 +180,13 @@ addBtn.addEventListener("click", () => {
                 let textarea = item.querySelector("textarea").removeAttribute("disabled");
                 item.querySelectorAll("input")[1].classList.add("hide-me");
                 item.querySelectorAll("input")[0].classList.remove("hide-me");
-                console.log(textarea);
+                // console.log(textarea);
             } else if (e.target.getAttribute("class") == "save"){
                 let item = e.target.parentNode;
+                let textareaValue = item.querySelector("textarea").value;
+                // console.log(item);
+                // console.log(item.querySelector("textarea").value);
+                updateTextarea(item, textareaValue);
                 let textarea = item.querySelector("textarea").setAttribute("disabled", true);
                 item.querySelectorAll("input")[1].classList.remove("hide-me");;
                 item.querySelectorAll("input")[0].classList.add("hide-me");
@@ -165,8 +201,3 @@ function adjustTextareaheight(input) {
     input.style.height = "auto";
     input.style.height = (input.scrollHeight) + "px";
 }
-
-
-
-
-
